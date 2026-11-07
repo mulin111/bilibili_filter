@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "mass-upload",
+      "type": "up-mass-upload",
+      "enabled": true,
+      "action": "block",
+      "scope": [
+        "home",
+        "video"
+      ],
+      "config": {
+        "threshold": 5,
+        "windowHours": 24,
+        "rolling": false,
+        "lookbackDays": 7,
+        "excludeLiveReplay": true,
+        "skipFollowed": true,
+        "videoFollowedCheck": true
+      }
+    },
+    {
+      "id": "whitelist",
+      "type": "uid-list",
+      "enabled": true,
+      "action": "allow",
+      "scope": [
+        "home",
+        "video"
+      ],
+      "config": {
+        "uids": [],
+        "names": []
+      }
+    },
+    {
+      "id": "blacklist",
+      "type": "uid-list",
+      "enabled": false,
+      "action": "block",
+      "scope": [
+        "home",
+        "video"
+      ],
+      "config": {
+        "uids": [],
+        "names": []
+      }
+    },
+    {
+      "id": "keywords",
+      "type": "keyword",
+      "enabled": false,
+      "action": "block",
+      "scope": [
+        "home",
+        "video"
+      ],
+      "config": {
+        "keywords": [],
+        "matchTitle": true,
+        "matchUpName": false,
+        "regex": false
+      }
+    },
+    {
+      "id": "low-play",
+      "type": "play-count",
+      "enabled": false,
+      "action": "block",
+      "scope": [
+        "home",
+        "video"
+      ],
+      "config": {
+        "min": 0,
+        "max": 1000
+      }
+    },
+    {
+      "id": "keywords-allow",
+      "type": "keyword",
+      "enabled": false,
+      "action": "allow",
+      "scope": [
+        "home",
+        "video"
+      ],
+      "config": {
+        "keywords": [],
+        "matchTitle": true,
+        "matchUpName": false,
+        "regex": false
+      }
+    }
+  ]
+}
